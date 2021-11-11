@@ -16,10 +16,11 @@ class PhotoVk_to_YaDisk:
         self.disk_token = disk_token
 
     def get_vk_photos(self):
-        api = requests.get('https://api.vk.com/method/photos.getAll', params={
+        api = requests.get('https://api.vk.com/method/photos.get', params={
+            'album_id': 'profile',
             'extended': 1,
             'photo_sizes': 1,
-            'no_service_albums': 1,
+            # 'no_service_albums': 1,
             'count': 5,
             'access_token': self.token,
             'v': self.version
